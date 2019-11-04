@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LanguageComponent } from './language/language.component';
 import { LanguageDetailComponent } from './language-detail/language-detail.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
    declarations: [
@@ -14,7 +15,8 @@ import { LanguageDetailComponent } from './language-detail/language-detail.compo
    ],
    imports: [
       BrowserModule,
-      AppRoutingModule
+      AppRoutingModule,
+      HttpClientModule
    ],
    providers: [],
    bootstrap: [

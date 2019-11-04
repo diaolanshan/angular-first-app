@@ -3,3 +3,6 @@
         <td *ngFor="let language of languages" (click)="onclick(language.id)">{{language.name}} |</td>
     </tr>
 </table>
+
+
+<app-language-detail [language]="selectedLanguage"></app-language-detail>

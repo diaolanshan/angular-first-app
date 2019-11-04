@@ -13,16 +13,22 @@ export class LanguageComponent implements OnInit {
 
   languages: Learn[];
 
-  constructor(languageservice: LanguageService) { 
+  selectedLanguage: number;
+
+  constructor(languageservice: LanguageService) {
     this.languageservice = languageservice
   }
 
   ngOnInit() {
-    this.languages = this.languageservice.getservices();
+    // this.languages = this.languageservice.getservices();
+    this.languageservice.getLanguagesHttp().subscribe((data)=>{
+      this.languages = data.data;
+    }
+    )
   }
 
   onclick(id: number):void{
-    console.log(id)
+    this.selectedLanguage = id;
   }
 
 }
